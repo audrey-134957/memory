@@ -1,8 +1,10 @@
 # Problèmes de logique rencontrés
 
-1) Créer un simple tableau (array) pour récupérer la clé et la valeur de chaque image et les utiliser pour créer dynamiquement la carte. X
+1) L'application des images sur les cartes
 
-Il faudrait créer un tableau multidimentionnel pour ensuite pouvoir récupérer la valeur mère et les valeurs enfants de cette valeur mère
+❌ Créer un simple tableau (array) pour récupérer la clé et la valeur de chaque image et les utiliser pour créer dynamiquement la carte. 
+
+✅ Il faudrait créer un tableau multidimentionnel pour ensuite pouvoir récupérer la valeur mère et les valeurs enfants de cette valeur mère
 
 EX:
 
