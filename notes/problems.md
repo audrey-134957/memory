@@ -6,6 +6,8 @@ Il faudrait créer un tableau multidimentionnel pour ensuite pouvoir récupérer
 
 EX:
 
+```
+
 0 : daim (valeur mère): [
             1 (valeur enfant),
             2 (valeur enfant)
@@ -18,3 +20,4 @@ EX:
 
 ...
 
+```
