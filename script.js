@@ -1,11 +1,12 @@
 var app = {
 
-    init: function init(){
+    init: function init() {
+
         this.addAnimalsOnCard(); // on crée un tableau pour générer  les animaux que l'on ajoutera par la suite sur les cartes
         this.addCards(); // on ajoute les cartes (jeu de 16 cartes)
     },
 
-    
+
     /*
      * on crée un tableau pour générer  les animaux que l'on ajoutera par la suite sur les cartes
 
@@ -14,84 +15,66 @@ var app = {
      il faudrait ajouter une class pour la paire,
 
         ex: 2 img avec la meme classe. class= img-daim, chaque imag avec id différent id = daim--1 id= daim--2
-     */ 
-    addAnimalsOnCard : function addAnimalsOnCard(){
+     */
+    addAnimalsOnCard: function addAnimalsOnCard() {
 
-        $animalsList = [];
+        // je crée un tableau vide pour les paires de cartes
+        let $animalsPair = [];
 
-        $animalNamesList = ['daim', 'giraffe', 'baleine'];
+        // je crée le tb avec le nom des animaux
+        let $animalsNamesList = ['antelope', 'giraffe', 'gorilla', 'kangaroo', 'monkey', 'nymph', 'pelican', 'penguin'];
 
-        const $animalName = 'animal-' ;
+        //je veux créer des cartes pour chaque image ...
+        $.each($animalsNamesList, function (key, value) {
+            //  => test | console.log(key);
+            //  => test | console.log(value);
 
-        for($animalNb = 1; $animalNb <= 8; $animalNb++){
-            $animalsList.push($animalName + $animalNb);
-        };
 
-        // test => console.log($animalsList);
+            // et pour chaque image, il faut une paire. Je récupère $animalsPair pour y ajouter les paires de cartes
+            for (p = 1; p <= 2; p++) {
 
-        return $animalsList;
+                //je crée la carte en HTML
+                var $card = '<div class="card">' +
+                    '<img class="animal animal--' + value + '" id="' + value + '-' + p + '" src="/animals/' + value + '.png" alt="">' +
+                    '</div>';
+
+
+                // je vais ajouter chaque carte au tableau $animalsPair
+                $animalsPair.push($card);
+            };
+
+        });
+
+        // je vais nommer une nouvelle variable, $cardsSet, qui va receuillir le tableau de paire de chaque animal.
+        $cardsSet = $animalsPair;
+
+        // je retoune le tableau de jeu de cartes
+        return $cardsSet;
     },
 
     /*
      * on ajoute les cartes (jeu de 16 cartes)
-     */ 
-    addCards: function addCards(){
+     */
+    addCards: function addCards() {
 
         var $quadrillage = $('div.quadrillage');
 
-
-        $.each( $animalsList, function( key , value) {
-            
-            // var $animalValue = value;
-for(p=1; p<=2; p++){
-    var $card = '<div class="card">'+
-    '<img class="animal daim" id="' $animalNamesList + p +'" src="/animals/'+ value + '.png" alt="">'+
-    '</div>';
-}
-            
-
-            // à la place dans img, il faut le nom de l'animal et à la place du premier value dans 'card', il faut remplacement par le nom de l'animal
-
-            console.log(value);
-            // console.log($card);
-
-          });
-
-        //   var $cardTst = '<div class="card">'+
-        //         '<img class="animal daim" id="daim-1" src="/animals/animal-1.png" alt="">'+
-        //         '</div>';
-
-
-        //   for(o=1; o<=2; o++){
-        //     var $card = '<div class="card">'+
-        //         '<img class="animal daim" id="' + $animalValue + o + '" src="/animals/'+ $animalValue + '.png" alt="">'+
-        //         '</div>';
-
-        // }
-
-        //   return $card;
-        
-
-        // on crée les cartes. Il ne faut pas oublier d'y ajouter les paires.
-        // var $card = '<div class="card">'+
-        //             '<img class="animal'+ animalValue +'" id="' + animalValue + '" src="/animals/animal-1.png" alt="">'+
-        //             '</div>';
-
+    
         // on teste si la classe .quadrillage existe
-        if($quadrillage.hasClass('quadrillage')){
-            console.log('ok');
+        if ($quadrillage.hasClass('quadrillage')) {
 
-        // on génère 16 cartes
-        // for(i = 1; i<=16; i++){
-        //     $quadrillage.append($cardTst);
-        // }
+            //si elle existe, je récupère chaque carte ...
+            $.each($cardsSet, function (key, value) {
+
+                //...que je vais ajouter dans la div quadrillage
+                $quadrillage.append(value);
+            });
 
 
-
-        }else{
+        } else {
             console.log('no');
         }
     }
-  };
+};
 
 app.init();

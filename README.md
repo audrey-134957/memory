@@ -80,7 +80,19 @@ ___
 ## Ressources:
 
 
+### Images
 
+Pack animaux sauvages 
 
-### Problèmes rencontrées:
+* https://www.flaticon.com/stickers-pack/wildlife-85
 
+Les animaux choisis
+
+* gorilla = https://www.flaticon.com/free-sticker/gorilla_4497947
+* penguin = https://www.flaticon.com/free-sticker/penguin_4497826
+* perroquet = https://www.flaticon.com/free-sticker/nymph_4497849
+* antilope = https://www.flaticon.com/free-sticker/animals_5906889
+* giraffe = https://www.flaticon.com/free-sticker/animals_5906877
+* kangourou = https://www.flaticon.com/free-sticker/animals_5906900
+* monkey = https://www.flaticon.com/free-sticker/animals_5906802
+* pelican = https://www.flaticon.com/free-sticker/animals_5906866

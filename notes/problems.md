@@ -23,3 +23,8 @@ EX:
 ...
 
 ```
+
+
+2) Récupérer une variable d'une autre fonction
+
+https://stackoverflow.com/questions/9676499/jquery-grab-variable-from-another-function
