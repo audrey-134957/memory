@@ -51,11 +51,10 @@ var app = {
      */
     addCards: function addCards() {
 
-        var $quadrillage = $('div.quadrillage');
-
+        var $quadrillage = $('div.grid');
     
         // on teste si la classe .quadrillage existe
-        if ($quadrillage.hasClass('quadrillage')) {
+        if ($quadrillage.hasClass('grid')) {
 
             //si elle existe, je récupère chaque carte ...
             $.each($cardsSet, function (key, value) {
