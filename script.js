@@ -9,12 +9,6 @@ var app = {
 
     /*
      * on crée un tableau pour générer  les animaux que l'on ajoutera par la suite sur les cartes
-
-     il faut ajouter 3 images supplémentaires pour avoir un total de 8 images
-
-     il faudrait ajouter une class pour la paire,
-
-        ex: 2 img avec la meme classe. class= img-daim, chaque imag avec id différent id = daim--1 id= daim--2
      */
     addAnimalsOnCard: function addAnimalsOnCard() {
 
