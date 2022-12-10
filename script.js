@@ -15,28 +15,30 @@ var app = {
         // je crée un tableau vide pour les paires de cartes
         let $animalsPair = [];
 
+
         // je crée le tb avec le nom des animaux
-        let $animalsNamesList = ['antelope', 'giraffe', 'gorilla', 'kangaroo', 'monkey', 'nymph', 'pelican', 'penguin'];
+        const $animalsNamesList = ['antelope', 'giraffe', 'gorilla', 'kangaroo', 'monkey', 'nymph', 'pelican', 'penguin'];
 
         //je veux créer des cartes pour chaque image ...
         $.each($animalsNamesList, function (key, value) {
-            //  => test | console.log(key);
-            //  => test | console.log(value);
+            // console.log(key);
+            // console.log(value);
 
 
-            // et pour chaque image, il faut une paire. Je récupère $animalsPair pour y ajouter les paires de cartes
-            for (p = 1; p <= 2; p++) {
 
-                //je crée la carte en HTML
-                var $card = '<div class="card">' +
-                    '<img class="animal animal--' + value + '" id="' + value + '-' + p + '" src="/animals/' + value + '.png" alt="">' +
-                    '</div>';
+                // et pour chaque image, il faut une paire. Je récupère $animalsPair pour y ajouter les paires de cartes
+                for (p = 1; p <= 2; p++) {
+
+                    //je crée la carte en HTML
+                    var $card = '<div class="card">' +
+                        '<img class="animal animal--' + value + '" id="' + value + '-' + p + '" src="/animals/' + value + '.png" alt="">' +
+                        '</div>';
 
 
-                // je vais ajouter chaque carte au tableau $animalsPair
-                $animalsPair.push($card);
-            };
+                    // je vais ajouter chaque carte au tableau $animalsPair
+                    $animalsPair.push($card);
 
+                };
         });
 
         // je vais nommer une nouvelle variable, $cardsSet, qui va receuillir le tableau de paire de chaque animal.
@@ -51,17 +53,24 @@ var app = {
      */
     addCards: function addCards() {
 
-        var $quadrillage = $('div.grid');
-    
-        // on teste si la classe .quadrillage existe
-        if ($quadrillage.hasClass('grid')) {
+        var $grid = $('div.grid');
 
-            //si elle existe, je récupère chaque carte ...
+        // on teste si la classe .grid existe
+        if ($grid.hasClass('grid')) {
+
+            // let tst = $cardsSet.sort(function () {
+            //     return Math.random() - 0.5
+            // });
+
+
+
             $.each($cardsSet, function (key, value) {
 
-                //...que je vais ajouter dans la div quadrillage
-                $quadrillage.append(value);
+                //...que je vais ajouter dans la div grid
+                $grid.append(value);
+
             });
+
 
 
         } else {

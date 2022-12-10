@@ -2,12 +2,6 @@
 
 1) L'application des images sur les cartes
 
-❌ Créer un simple tableau (array) pour récupérer la clé et la valeur de chaque image et les utiliser pour créer dynamiquement la carte. 
-
-✅ Il faudrait créer un tableau multidimentionnel pour ensuite pouvoir récupérer la valeur mère et les valeurs enfants de cette valeur mère
-
-EX:
-
 ```
 
 0 : daim (valeur mère): [
@@ -27,4 +21,9 @@ EX:
 
 2) Récupérer une variable d'une autre fonction
 
-https://stackoverflow.com/questions/9676499/jquery-grab-variable-from-another-function
+* https://stackoverflow.com/questions/9676499/jquery-grab-variable-from-another-function
+
+3) Faire un ramdom dans un tableau (mode aléatoire)
+
+* https://sebhastian.com/shuffle-array-javascript/
+* https://openclassrooms.com/forum/sujet/je-ne-comprends-pas-ce-code-0-5-math-random
