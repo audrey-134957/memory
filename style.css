@@ -9,10 +9,12 @@
     margin: auto;
 }
 
-
-.card{
+.cell{
     justify-self: center;
     align-self: center;
+}
+
+.card{
     width: calc(750px/4);
     height: calc(750px/4);
     border-right:solid 1px rgb(255, 251, 202);
