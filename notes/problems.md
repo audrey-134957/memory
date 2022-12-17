@@ -23,7 +23,8 @@
 
 * https://stackoverflow.com/questions/9676499/jquery-grab-variable-from-another-function
 
-3) Faire un ramdom dans un tableau (mode aléatoire)
+3) Faire un mélange dans un tableau (mode aléatoire)
 
-* https://sebhastian.com/shuffle-array-javascript/
-* https://openclassrooms.com/forum/sujet/je-ne-comprends-pas-ce-code-0-5-math-random
+* https://www.drgoulu.com/2013/01/19/comment-bien-brasser-les-cartes/
+* https://www.delftstack.com/fr/howto/javascript/shuffle-array-javascript/
+* https://waytolearnx.com/2019/09/melanger-un-tableau-en-javascript.html
