@@ -93,45 +93,45 @@ var app = {
     /*
      * on sélectionne 2 cartes
      */
-    selectTwoCards: function (crdArr) {
+    selectTwoCards: function (cardArr) {
         //je prépare un tableau vide, qui va recevoir les deux cartes que je sélectionnerai.
-        crdArr = [];
+        cardArr = [];
 
         //je vérifie la longueur du tableau (le nb d'élements qui doit être à 0);
-        //console.log(crdArr.length);
+        //console.log(cardArr.length);
 
         card = $('.card');
 
         // au clique sur une carte, ...
         card.on('click', function (e) {
-            //console.log(!crdArr.includes(e.target));
+            //console.log(!cardArr.includes(e.target));
 
             // si le tableau contient - de 2 éléments ET ne contient pas déjà une carte sélctionnée précédement
-            if (crdArr.length !== 2 && !crdArr.includes(e.currentTarget)) {
+            if (cardArr.length !== 2 && !cardArr.includes(e.currentTarget)) {
 
                 // je vais ajouter au tableau les cartes que j'ai sélectionné
-                crdArr.push(e.currentTarget);
+                cardArr.push(e.currentTarget);
             }
 
             //si le tb a bien 2 elements...
-            if (crdArr.length == 2) {
+            if (cardArr.length == 2) {
                 // on demande je faire agir la fonction suivante
-                app.testIfSelectedCardsAreSame(crdArr);
+                app.testIfSelectedCardsAreSame(cardArr);
 
             }
+
         });
     },
 
     /**
      * On teste si les deux cartes ds le tb sont paires ou non
      */
-    testIfSelectedCardsAreSame: function (crdArr, cardOne, cardTwo) {
+    testIfSelectedCardsAreSame: function (cardArr, cardOne, cardTwo) {
 
-        console.log('fait');
         // je viens ajouter la première carte dans une variable
-        cardOne = crdArr[0];
+        cardOne = cardArr[0];
         //pareil pour la 2nd
-        cardTwo = crdArr[1];
+        cardTwo = cardArr[1];
 
         //j'ajoute leur id (nom de l'animal) sans le n° de la paire (1 ou 2), dans la variable
         cardOneIdValue = cardOne.id.slice(0, -2);
@@ -140,26 +140,29 @@ var app = {
 
         // les deux id sont différentes,
         if (cardOneIdValue !== cardTwoIdValue) {
-
-            console.log('diff');
-        
-        // les deux id sont pareils,
+            //console.log('diff');
         } else {
-            console.log('paire');
+
+            //console.log('paire');
 
             //on vient cacher les 2 cartes
-            $(cardOne).hide();
-            $(cardTwo).hide();
-
-            //on vide le tableau
-            crdArr =  [];
-
-            //on appelle de nouveau la fonction des sélection des cartes en lui passant le tb
-            app.selectTwoCards(crdArr);
+            $(cardOne).remove();
+            $(cardTwo).remove();
         }
 
-        console.log(cardOne);
+        //console.log(cardArr);
 
+        //on retire les listeners sur la carte
+        card.off();
+
+        //si le tb a tjr 2 éléments...
+        if (cardArr.length == 2) {
+
+            //on vide le tableau
+            cardArr = [];
+            //on appelle de nouveau la fonction des sélection des cartes en lui passant le tb
+            app.selectTwoCards(cardArr);
+        }
     }
 };
 
