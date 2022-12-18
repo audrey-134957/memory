@@ -9,7 +9,7 @@ ____
 
 
 ### Version 1:
-* un quadrillage 5*5
+* un quadrillage 4*4 ✅
 * un bouton pour démarrer la partie
 * un bouton pour quitter le jeu
 * un bouton rejouer
@@ -30,17 +30,20 @@ ___
 ## La logique:
 
 ### Version 1:
-
-* lorsque qu'une carte correspond à son paire, elle disparait
-* les cartes doivent être disposées de façon aléatoire et à chaque début de jeu uniquement.
-* il doit y avoir connexion entre les paires
+* les cartes doivent être face caché
+* lorsque qu'une carte correspond à son paire, elle disparait ✅
+* les cartes doivent être disposées de façon aléatoire et à chaque début de jeu uniquement. ✅
+* il doit y avoir connexion entre les paires ✅
 * si deux cartes = non paires, elle doivent rester et se retourner
-* je ne dois choisir que 2 cartes
+* je ne dois choisir que 2 cartes ✅
 
 
 ### Version 2:
+
 * lorsque que je trouve la paire du premier coup, je gagne 3 points
 * lorsque qu'il me faut +1 fois pour trouver la paire, je gagne 1 point
+
+
 ### Version 3:
 
 ___

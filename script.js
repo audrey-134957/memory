@@ -151,7 +151,6 @@ var app = {
         }
 
         //console.log(cardArr);
-
         //on retire les listeners sur la carte
         card.off();
 
