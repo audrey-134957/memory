@@ -10,17 +10,18 @@ ____
 
 ### Version 1:
 * un quadrillage 4*4 ✅
+
+
+### Version 2:
 * un bouton pour démarrer la partie
 * un bouton pour quitter le jeu
 * un bouton rejouer
 
-### Version 2:
+
+### Version 3:
 * un compteur de points
 * un message de réussite
 * un message d'avant départ du jeu
-
-### Version 3:
-
 * un bouton reset
     * un message qui veut que le joueur confirme son départ du jeu
 * un bouton nouvelle partie
@@ -30,11 +31,11 @@ ___
 ## La logique:
 
 ### Version 1:
-* les cartes doivent être face caché
+* les cartes doivent être face caché ✅
 * lorsque qu'une carte correspond à son paire, elle disparait ✅
 * les cartes doivent être disposées de façon aléatoire et à chaque début de jeu uniquement. ✅
 * il doit y avoir connexion entre les paires ✅
-* si deux cartes = non paires, elle doivent rester et se retourner
+* si deux cartes = non paires, elle doivent rester et se rester camouflées ✅
 * je ne dois choisir que 2 cartes ✅
 
 
@@ -46,6 +47,7 @@ ___
 
 ### Version 3:
 
+* retourner les cartes avec un effet 3D
 ___
 ## Procédé:
 
