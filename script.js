@@ -9,6 +9,7 @@ var app = {
     },
 
 
+
     /*
      * on crée un tableau pour générer  les animaux que l'on ajoutera par la suite sur les cartes
      */
@@ -31,6 +32,7 @@ var app = {
                 //je crée la carte en HTML
                 var $card = '<div class="cell">' +
                     '<div class="card card--' + value + '" id="' + value + '-' + p + '">' +
+                    '<div class="hidden"></div>' +
                     '<img class="animal animal--' + value + '" src="/animals/' + value + '.png" alt="">' +
                     '</div>' +
                     '</div>';
@@ -100,6 +102,7 @@ var app = {
         //je vérifie la longueur du tableau (le nb d'élements qui doit être à 0);
         //console.log(cardArr.length);
 
+        //v2
         card = $('.card');
 
         // au clique sur une carte, ...
@@ -108,6 +111,12 @@ var app = {
 
             // si le tableau contient - de 2 éléments ET ne contient pas déjà une carte sélctionnée précédement
             if (cardArr.length !== 2 && !cardArr.includes(e.currentTarget)) {
+
+                // console.log(e.currentTarget);
+                $(e.currentTarget).children('.hidden').css('opacity', '0');
+
+                $(e.currentTarget).addClass('card--active');
+
 
                 // je vais ajouter au tableau les cartes que j'ai sélectionné
                 cardArr.push(e.currentTarget);
@@ -123,10 +132,12 @@ var app = {
         });
     },
 
-    /**
+    /*
      * On teste si les deux cartes ds le tb sont paires ou non
      */
     testIfSelectedCardsAreSame: function (cardArr, cardOne, cardTwo) {
+
+        let nbOfCards = $('.grid .cell .card').length;
 
         // je viens ajouter la première carte dans une variable
         cardOne = cardArr[0];
@@ -140,27 +151,57 @@ var app = {
 
         // les deux id sont différentes,
         if (cardOneIdValue !== cardTwoIdValue) {
-            //console.log('diff');
-        } else {
 
+            // je veux que les cartes redeviennent cachées après les 0.8sec.
+            setTimeout(function () {
+                $(cardOne).children('.hidden').css('opacity', '100');
+                $(cardTwo).children('.hidden').css('opacity', '100');
+            }, 0800);
+
+            //je retire les listeners des cartes.
+            card.off();
+
+
+        } else {
             //console.log('paire');
 
-            //on vient cacher les 2 cartes
-            $(cardOne).remove();
-            $(cardTwo).remove();
+            // je veux que les cartes redeviennent cachées après les 0.8sec.
+            setTimeout(function () {
+                //on vient cacher les 2 cartes
+                cardOne.remove();
+                cardTwo.remove();
+
+            }, 0800);
+
+            //je dois décrémenter le nb de cartes restants (-2) car lorsque les paires sont trouvées elle sont par 2.
+            nbOfCards = nbOfCards - 2;
+
+            //je passe la variable à la function ci-après.
+            app.checkIfGridEmpty(nbOfCards);
         }
 
-        //console.log(cardArr);
-        //on retire les listeners sur la carte
+        //je retire les listeners des cartes.
         card.off();
 
         //si le tb a tjr 2 éléments...
         if (cardArr.length == 2) {
-
             //on vide le tableau
             cardArr = [];
             //on appelle de nouveau la fonction des sélection des cartes en lui passant le tb
             app.selectTwoCards(cardArr);
+        }
+    },
+
+    /*
+    * on va regarder combien de cartes il reste 
+    */
+    checkIfGridEmpty: function (nbOfCards) {
+
+        //    console.log(nbOfCards);
+        if (nbOfCards == 0) {
+            setTimeout(function () {
+                alert('fin du jeu');
+            }, 1200);
         }
     }
 };

@@ -51,7 +51,7 @@ ___
 
 1) je clique sur le bouton jouer
 
-2) les cartes sont disposés de façon aléatoire sur le quadrillage, couverture façe à nous (non dévoilés)
+2) les cartes sont disposées de façon aléatoire sur le quadrillage, face cachée
 
 3) je décide de retourner deux cartes:
 

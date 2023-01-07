@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+
+}
+
 .grid{
-    border: solid 1px blue;
     width: 900px;
     height: 900px;
 
@@ -12,24 +19,55 @@
 .cell{
     justify-self: center;
     align-self: center;
+
 }
 
 .card{
     width: calc(750px/4);
     height: calc(750px/4);
-    border-right:solid 1px rgb(255, 251, 202);
     border-radius: 15px;
+    border-right:solid 1px rgb(255, 251, 202);
     box-shadow: 5px 7px 10px rgb(243, 243, 243);
     background-color: rgb(255, 251, 202);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
+.card:hover{
+    cursor: pointer;
+}
+
+.card--active{
+    border:solid 3px rgb(255, 247, 154);
+}
+
+.hidden{
+    position: absolute;
+    width: calc(750px/4);
+    height: calc(750px/4);
+    border-radius: 15px;
+
+    background-color: rgb(255, 247, 154);
+}
 
 .animal{
     box-sizing: border-box;
     width: 150px;
     height: 150px;
+}
+
+
+.alert-box{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(241, 53, 185);
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
 }
