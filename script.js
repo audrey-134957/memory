@@ -5,7 +5,6 @@ var app = {
         this.addAnimalsOnCard(); // on crée un tableau pour générer  les animaux que l'on ajoutera par la suite sur les cartes
         this.addCards(); // on ajoute les cartes (jeu de 16 cartes)
         this.selectTwoCards(); // on sélectionne 2 cartes
-
     },
 
 
@@ -193,14 +192,29 @@ var app = {
     },
 
     /*
-    * on va regarder combien de cartes il reste 
+    * on va regarder combien de cartes il reste puis afficher une alerte à la fin du jeu
     */
     checkIfGridEmpty: function (nbOfCards) {
 
-        //    console.log(nbOfCards);
+        alertBox =  '<div class="alert-box">' +
+                    '<div class="text-box">' +
+                    '<h1>Bravo, tu as fini la partie !</h1>' +
+                    '<p>Prêt.e pour un nouveau tour?</p>' +
+                    '</div>' +
+
+                    '<div class="buttons-box">' +
+                    '<bouton class="button button--yeah">YEAH !</bouton>' +
+                    '<bouton class="button button--nop">NOP !</bouton>' +
+                    '</div>' +
+                    '</div>';
+
+        // s'il ne reste plus de cartes, alors on affichera une alerte annoncant la fin du jeu
         if (nbOfCards == 0) {
             setTimeout(function () {
-                alert('fin du jeu');
+
+
+                $('.body').append(alertBox);
+
             }, 1200);
         }
     }
